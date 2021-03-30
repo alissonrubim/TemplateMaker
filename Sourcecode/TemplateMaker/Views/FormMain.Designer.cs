@@ -35,7 +35,7 @@ namespace TemplateMaker.Viewer
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBoxParametersJson = new System.Windows.Forms.RichTextBox();
             this.buttonExecute = new System.Windows.Forms.Button();
-            this.smartPropertyGrid = new TemplateMaker.Viewer.Views.SmartProperty.SmartPropertyGrid();
+            this.smartPropertyGrid = new SmartProperty.SmartPropertyGrid();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +123,7 @@ namespace TemplateMaker.Viewer
             this.smartPropertyGrid.Name = "smartPropertyGrid";
             this.smartPropertyGrid.Size = new System.Drawing.Size(408, 362);
             this.smartPropertyGrid.TabIndex = 9;
-            this.smartPropertyGrid.PropertyValueChanged += new TemplateMaker.Viewer.Views.SmartProperty.SmartPropertyGridOnPropertyValueChangeHandler(this.smartPropertyGrid_PropertyValueChanged);
+            this.smartPropertyGrid.PropertyValueChanged += new SmartProperty.SmartPropertyGridOnPropertyValueChangeHandler(this.smartPropertyGrid_PropertyValueChanged);
             // 
             // FormMain
             // 
@@ -155,6 +155,6 @@ namespace TemplateMaker.Viewer
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBoxParametersJson;
         private System.Windows.Forms.Button buttonExecute;
-        private Views.SmartProperty.SmartPropertyGrid smartPropertyGrid;
+        private SmartProperty.SmartPropertyGrid smartPropertyGrid;
     }
 }

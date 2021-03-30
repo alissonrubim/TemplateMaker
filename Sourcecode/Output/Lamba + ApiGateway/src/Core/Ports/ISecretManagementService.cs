@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace InviteToKill.Ports
+namespace SuperNiceProject.Ports
 {
     public interface ISecretManagementService
     {

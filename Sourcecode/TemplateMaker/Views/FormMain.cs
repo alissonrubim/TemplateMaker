@@ -1,15 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using System.Windows.Forms;
 using TemplateProcessor.Models;
-using TemplateMaker.Viewer.Helpers.CustomProperty;
 using TemplateMaker.Viewer.Models;
 using TemplateProcessor;
 using TemplateMaker.Viewer.Views;
 using TemplateProcessor.Helpers.SmartString.Exceptions;
+using SmartProperty;
 
 namespace TemplateMaker.Viewer
 {
@@ -35,69 +34,43 @@ namespace TemplateMaker.Viewer
 
         private void LoadTemplate(Template template)
         {
-            CurrentTemplate = template;
-            richTextBoxDescription.Text = CurrentTemplate.Description;
+            try
+            {
+                CurrentTemplate = template;
+                richTextBoxDescription.Text = CurrentTemplate.Description;
+                CurrentProperties = ConvertParameterToProperty(CurrentTemplate.Parameters);
+                smartPropertyGrid.LoadProperties(CurrentProperties);
 
-            /*CurrentProperties = new PropertyCollection<TemplatePropertyItem>();
-            foreach (TemplateProperty property in CurrentTemplate.Properties)
-                CurrentProperties.Add(new TemplatePropertyItem
-                {
-                    Name = property.Name,
-                    Type = property.Type,
-                    Required = property.Required,
-                    DefaultValue = property.DefaultValue
-                });
-            propertyGrid.SelectedObject = CurrentProperties;
-            propertyGrid.Refresh();*/
+                ShowTemplateParameters();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"An error ocurred when loading the template `{CurrentTemplate.Name}`: {e.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-
-            CurrentProperties = new List<IProperty>();
-            foreach (TemplateProperty property in CurrentTemplate.Properties)
-                CurrentProperties.Add(new TemplatePropertyItem
-                {
-                    Name = property.Name,
-                    Type = property.Type,
-                    Required = property.Required,
-                    DefaultValue = property.DefaultValue,
-                    IsCollection = property.IsCollection
-                });
-            smartPropertyGrid.LoadProperties(CurrentProperties);
-
-            ShowTemplateParameters();
+        private List<IProperty> ConvertParameterToProperty(IEnumerable<TemplateParameter> parameters)
+        {
+            List<IProperty> properties = new List<IProperty>();
+            foreach (TemplateParameter parameter in parameters)
+                properties.Add(new Property(parameter));
+            return properties;
         }
 
         private void ShowTemplateParameters()
         {
-            try
-            {
-                richTextBoxParametersJson.Text = JsonConvert.SerializeObject(GetTemplateParameters(), Formatting.Indented);
-            }
-            catch(MissingDictonaryEntryException ex)
-            {
-                ThreatInvalidDictionaryEntryException(ex);
-            }
-            catch(Exception ex)
-            {
-                if (ex.InnerException is MissingDictonaryEntryException)
-                    ThreatInvalidDictionaryEntryException(ex.InnerException as MissingDictonaryEntryException);
-            }
+            dynamic templateParameters = TemplateParameterProcessor.Process(CurrentTemplate.Parameters);
+            richTextBoxParametersJson.Text = JsonConvert.SerializeObject(templateParameters, Formatting.Indented);
         }
 
-        private void ThreatInvalidDictionaryEntryException(MissingDictonaryEntryException ex)
+        /*private void ThreatInvalidDictionaryEntryException(MissingDictonaryEntryException ex)
         {
             FormDictionaryEntryEditor formDictionaryEntryEditor = new FormDictionaryEntryEditor(ex.Word);
             formDictionaryEntryEditor.ShowDialog();
             if (formDictionaryEntryEditor.Continue)
                 ShowTemplateParameters();
-        }
+        }*/
 
-        private dynamic GetTemplateParameters()
-        {
-            IDictionary<string, object> obj = new ExpandoObject();
-            foreach (IProperty property in CurrentProperties)
-                obj.Add(property.GetName(), property.GetValue());
-            return obj;
-        }
 
         private void FormMain_Shown(object sender, EventArgs e)
         {
@@ -126,9 +99,9 @@ namespace TemplateMaker.Viewer
             };
             processor.OnProcessFileError += (string file, Exception exception) =>
             {
-                MessageBox.Show($"An error ocurred when processing the template: {exception.Message}", "Atention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error ocurred when processing the template at file `{file}`: {exception.Message}", "Atention", MessageBoxButtons.OK, MessageBoxIcon.Error);
             };
-            processor.Process(GetTemplateParameters());
+            processor.Process(CurrentTemplate.Parameters);
         }
 
         private void smartPropertyGrid_PropertyValueChanged(IProperty property)

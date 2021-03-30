@@ -1,10 +1,10 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: "AWS::Serverless-2016-10-31"
-Description: "Service that send invitations for kill people :)"
+Description: "It's just a super nice project"
 Metadata:
-  AlertIdentifier: "net-invite-to-kill"
+  AlertIdentifier: "net-super-nice-project"
   Tags:
-    CostCenter: "hell"
+    CostCenter: "mybrain"
 Parameters:
   Region:
     Description: "Specify the region"
@@ -14,8 +14,8 @@ Parameters:
       - "eu-west-1"
   AppGroup:
     Type: String
-    Default: "net-invite-to-kill"
-    Description: "Service that send invitations for kill people :)"
+    Default: "net-super-nice-project"
+    Description: "It's just a super nice project"
     AllowedPattern: "^[a-z0-9\-]{1,22}$"
   Environment:
     Type: String
@@ -33,7 +33,7 @@ Parameters:
     Description: "Oracle connection string. Contains {} placeholders for values to be substituted"
   OracleUserName:
     Type: "String"
-    Default: "SRV_INVITE_TO_KILL"
+    Default: "SRV_SUPER_NICE"
   OraclePassword:
     Type: "String"
     NoEcho: true
@@ -89,10 +89,10 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       # Make sure handler is 128 characters or less
-      Handler: "InviteToKill.Host.Lambda.Get::InviteToKill.Host.Lambda.Get.Function::FunctionHandler"
+      Handler: "SuperNiceProject.Host.Lambda.Get::SuperNiceProject.Host.Lambda.Get.Function::FunctionHandler"
       Runtime: dotnetcore3.1
-      CodeUri: ./artifacts/InviteToKill.Host.Lambda.Get.zip
-      Description: Service that send invitations for kill people :)
+      CodeUri: ./artifacts/SuperNiceProject.Host.Lambda.Get.zip
+      Description: It's just a super nice project
       MemorySize: 512
       Timeout: 15
       FunctionName: !Sub "${AppGroup}-lambda-get"
@@ -133,10 +133,10 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       # Make sure handler is 128 characters or less
-      Handler: "InviteToKill.Host.Lambda.Put::InviteToKill.Host.Lambda.Put.Function::FunctionHandler"
+      Handler: "SuperNiceProject.Host.Lambda.Put::SuperNiceProject.Host.Lambda.Put.Function::FunctionHandler"
       Runtime: dotnetcore3.1
-      CodeUri: ./artifacts/InviteToKill.Host.Lambda.Put.zip
-      Description: Service that send invitations for kill people :)
+      CodeUri: ./artifacts/SuperNiceProject.Host.Lambda.Put.zip
+      Description: It's just a super nice project
       MemorySize: 512
       Timeout: 15
       FunctionName: !Sub "${AppGroup}-lambda-put"
@@ -177,10 +177,10 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       # Make sure handler is 128 characters or less
-      Handler: "InviteToKill.Host.Lambda.Delete::InviteToKill.Host.Lambda.Delete.Function::FunctionHandler"
+      Handler: "SuperNiceProject.Host.Lambda.Delete::SuperNiceProject.Host.Lambda.Delete.Function::FunctionHandler"
       Runtime: dotnetcore3.1
-      CodeUri: ./artifacts/InviteToKill.Host.Lambda.Delete.zip
-      Description: Service that send invitations for kill people :)
+      CodeUri: ./artifacts/SuperNiceProject.Host.Lambda.Delete.zip
+      Description: It's just a super nice project
       MemorySize: 512
       Timeout: 15
       FunctionName: !Sub "${AppGroup}-lambda-delete"
@@ -221,10 +221,10 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       # Make sure handler is 128 characters or less
-      Handler: "InviteToKill.Host.Lambda.Post::InviteToKill.Host.Lambda.Post.Function::FunctionHandler"
+      Handler: "SuperNiceProject.Host.Lambda.Post::SuperNiceProject.Host.Lambda.Post.Function::FunctionHandler"
       Runtime: dotnetcore3.1
-      CodeUri: ./artifacts/InviteToKill.Host.Lambda.Post.zip
-      Description: Service that send invitations for kill people :)
+      CodeUri: ./artifacts/SuperNiceProject.Host.Lambda.Post.zip
+      Description: It's just a super nice project
       MemorySize: 512
       Timeout: 15
       FunctionName: !Sub "${AppGroup}-lambda-post"
@@ -328,7 +328,7 @@ Resources:
               produces:
               - "application/json"
               parameters:
-              - name: InviteToKillid
+              - name: SuperNiceProjectid
                 requited: true
                 in: path
               responses:
@@ -349,7 +349,7 @@ Resources:
               produces:
               - "application/json"
               parameters:
-              - name: InviteToKillid
+              - name: SuperNiceProjectid
                 requited: true
                 in: path
               - in: "body"
@@ -373,7 +373,7 @@ Resources:
               produces: 
               - "application/json"
               parameters:
-              - name: InviteToKillid
+              - name: SuperNiceProjectid
                 requited: true
                 in: path
               responses:
@@ -418,7 +418,7 @@ Resources:
               produces:
               - "application/json"
               parameters:
-              - name: "InviteToKillid"
+              - name: "SuperNiceProjectid"
                 type: integer
                 required: true
                 in: "body"

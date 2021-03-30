@@ -1,5 +1,5 @@
 using Coolblue.Utilities.Resilience;
-using InviteToPay.ValueTypes;
+using SuperNiceProject.ValueTypes;
 
 namespace Lambda.Base
 {

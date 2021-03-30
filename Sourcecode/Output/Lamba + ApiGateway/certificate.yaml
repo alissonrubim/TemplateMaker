@@ -1,13 +1,13 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "CloudFront certificate for the net-invite-to-kill"
+Description: "CloudFront certificate for the net-super-nice-project"
 Metadata:
-  AlertIdentifier: "net-invite-to-kill"
+  AlertIdentifier: "net-super-nice-project"
   Tags:
-    CostCenter: "hell"
+    CostCenter: "mybrain"
 Parameters:
   AppGroup:
     Type: "String"
-    Default: "net-invite-to-kill"
+    Default: "net-super-nice-project"
     Description: "The name of the AppGroup"
     AllowedPattern: "^[a-z0-9\-]{1,32}$"
   Environment:

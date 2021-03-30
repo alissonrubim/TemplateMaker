@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using TemplateMaker.Viewer.Helpers.SchemaProvider;
 using TemplateMaker.Viewer.Helpers.SchemaProvider.Exceptions;
 using TemplateMaker.Viewer.Types;
-using TemplateMaker.Viewer.Views.SmartProperty.Editor;
+using SmartProperty.Editors;
 
 namespace TemplateMaker.Views.PropertyEditors
 {

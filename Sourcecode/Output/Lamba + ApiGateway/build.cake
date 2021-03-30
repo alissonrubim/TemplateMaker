@@ -25,10 +25,10 @@ var sourceDir = Directory("./src");
 var solutions = GetFiles("./**/*.sln");
 var projects = new []
 {
-    new FilePath(sourceDir.Path + "/Host/InviteToKill.Host.Lambda.Delete/InviteToKill.Host.Lambda.Delete.csproj"),
-    new FilePath(sourceDir.Path + "/Host/InviteToKill.Host.Lambda.Get/InviteToKill.Host.Lambda.Get.csproj"),
-    new FilePath(sourceDir.Path + "/Host/InviteToKill.Host.Lambda.Post/InviteToKill.Host.Lambda.Post.csproj"),
-    new FilePath(sourceDir.Path + "/Host/InviteToKill.Host.Lambda.Put/InviteToKill.Host.Lambda.Put.csproj"),
+    new FilePath(sourceDir.Path + "/Host/SuperNiceProject.Host.Lambda.Delete/SuperNiceProject.Host.Lambda.Delete.csproj"),
+    new FilePath(sourceDir.Path + "/Host/SuperNiceProject.Host.Lambda.Get/SuperNiceProject.Host.Lambda.Get.csproj"),
+    new FilePath(sourceDir.Path + "/Host/SuperNiceProject.Host.Lambda.Post/SuperNiceProject.Host.Lambda.Post.csproj"),
+    new FilePath(sourceDir.Path + "/Host/SuperNiceProject.Host.Lambda.Put/SuperNiceProject.Host.Lambda.Put.csproj"),
 };
 
 const string functionName = "GetFunction";

@@ -1,6 +1,6 @@
 using System;
 
-namespace InviteToKill
+namespace SuperNiceProject
 {
     public interface IUnitOfWork : IDisposable
     {

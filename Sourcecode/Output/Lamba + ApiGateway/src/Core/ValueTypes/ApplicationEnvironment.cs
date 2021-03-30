@@ -1,4 +1,4 @@
-namespace InviteToKill.ValueTypes
+namespace SuperNiceProject.ValueTypes
 {
     public enum ApplicationEnvironment
     {

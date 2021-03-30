@@ -3,30 +3,30 @@
     "Description": "Create a simple lambda with access to Oracle",
     "SearchDirectory": null,
     "SearchFileExtensions": [".sql", ".txt", ".sln", ".cake", ".csproj", ".cs", ".md", ".yaml"],
-    "Properties": [
+    "Parameters": [
         {
             "Name": "ProjectName",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "ExampleService"
+            "Value": "ExampleService"
         },
         {
             "Name": "ProjectDescription",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "net-example-service"
+            "Value": "net-example-service"
         },
         {
             "Name": "RepositoryName",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "net-example-service"
+            "Value": "net-example-service"
         },
         {
             "Name": "CostCenterName",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "finance"
+            "Value": "finance"
         },
         {
             "Name": "TableSchema",

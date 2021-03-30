@@ -1,6 +1,6 @@
 using System;
 
-namespace InviteToKill.Exceptions
+namespace SuperNiceProject.Exceptions
 {
     public class DependencyUnavailableException : Exception
     {

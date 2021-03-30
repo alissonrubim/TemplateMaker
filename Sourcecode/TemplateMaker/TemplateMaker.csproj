@@ -69,13 +69,6 @@
     <Compile Include="Views\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\CustomProperty\IConvertable.cs" />
-    <Compile Include="Helpers\CustomProperty\IProperty.cs" />
-    <Compile Include="Helpers\CustomProperty\IPropertyEditorForm.cs" />
-    <Compile Include="Helpers\CustomProperty\PropertyCollection.cs" />
-    <Compile Include="Helpers\CustomProperty\PropertyEditor.cs" />
-    <Compile Include="Helpers\CustomProperty\PropetryDescriptor.cs" />
-    <Compile Include="Helpers\CustomProperty\PropertyConverter.cs" />
     <Compile Include="Helpers\SchemaProvider\SchemaProvider.cs" />
     <Compile Include="Types\ColumnInfoType.cs" />
     <Compile Include="Views\FormDictionaryEntryEditor.cs">
@@ -84,7 +77,7 @@
     <Compile Include="Views\FormDictionaryEntryEditor.Designer.cs">
       <DependentUpon>FormDictionaryEntryEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\TemplatePropertyItem.cs" />
+    <Compile Include="Models\Property.cs" />
     <Compile Include="Types\TableInfoType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,32 +87,17 @@
     <Compile Include="Views\PropertyEditors\ApiInfoPropertyEditor.Designer.cs">
       <DependentUpon>ApiInfoPropertyEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PropertyEditors\ColumnInfoPropertyEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PropertyEditors\ColumnInfoPropertyEditor.Designer.cs">
+      <DependentUpon>ColumnInfoPropertyEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\PropertyEditors\TableInfoPropertyEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\PropertyEditors\TableInfoPropertyEditor.Designer.cs">
       <DependentUpon>TableInfoPropertyEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SmartProperty\Editor\Forms\FormSmartPropertyCollectionEditor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SmartProperty\Editor\Forms\FormSmartPropertyCollectionEditor.Designer.cs">
-      <DependentUpon>FormSmartPropertyCollectionEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SmartProperty\Editor\Forms\FormSmartPropertyEditor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SmartProperty\Editor\Forms\FormSmartPropertyEditor.Designer.cs">
-      <DependentUpon>FormSmartPropertyEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SmartProperty\Editor\Helper\SmartPropetyEditorFactory.cs" />
-    <Compile Include="Views\SmartProperty\Editor\ISmartPropertyEditor.cs" />
-    <Compile Include="Views\SmartProperty\Editor\Forms\IFromSmartPropertyEditor.cs" />
-    <Compile Include="Views\SmartProperty\SmartPropertyGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\SmartProperty\SmartPropertyGrid.Designer.cs">
-      <DependentUpon>SmartPropertyGrid.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -140,17 +118,11 @@
     <EmbeddedResource Include="Views\PropertyEditors\ApiInfoPropertyEditor.resx">
       <DependentUpon>ApiInfoPropertyEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertyEditors\ColumnInfoPropertyEditor.resx">
+      <DependentUpon>ColumnInfoPropertyEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\PropertyEditors\TableInfoPropertyEditor.resx">
       <DependentUpon>TableInfoPropertyEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SmartProperty\Editor\Forms\FormSmartPropertyCollectionEditor.resx">
-      <DependentUpon>FormSmartPropertyCollectionEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SmartProperty\Editor\Forms\FormSmartPropertyEditor.resx">
-      <DependentUpon>FormSmartPropertyEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SmartProperty\SmartPropertyGrid.resx">
-      <DependentUpon>SmartPropertyGrid.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -180,6 +152,10 @@
     <ProjectReference Include="..\Core\TemplateProcessor\TemplateProcessor.csproj">
       <Project>{fc764442-5dcf-4946-9c48-348585321455}</Project>
       <Name>TemplateProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartProperty\SmartProperty.csproj">
+      <Project>{70e00a71-3485-4c73-b530-45f4113bbc62}</Project>
+      <Name>SmartProperty</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

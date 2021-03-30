@@ -1,13 +1,13 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "IAM resources for net-invite-to-kill service"
+Description: "IAM resources for net-super-nice-project service"
 Metadata:
-  AlertIdentifier: "hell"
+  AlertIdentifier: "mybrain"
   Tags:
-    CostCenter: "hell"
+    CostCenter: "mybrain"
 Parameters:
   AppGroup:
     Type: "String"
-    Default: "net-invite-to-kill"
+    Default: "net-super-nice-project"
     AllowedPattern: "^[a-z0-9\-]{1,21}$"
   Environment:
     Type: "AWS::SSM::Parameter::Value<String>"
