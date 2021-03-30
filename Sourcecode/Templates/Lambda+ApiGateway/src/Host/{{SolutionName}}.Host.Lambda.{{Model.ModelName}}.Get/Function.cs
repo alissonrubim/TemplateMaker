@@ -2,7 +2,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
-using {{SolutionName}}.Host.Lambda.Get.Presentations;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get.Presentations;
 using {{SolutionName}}.UseCases;
 using {{SolutionName}}.UseCases.Interfaces;
 using Lambda.Base;

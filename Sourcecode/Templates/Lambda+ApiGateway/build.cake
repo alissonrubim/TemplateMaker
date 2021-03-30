@@ -25,10 +25,11 @@ var sourceDir = Directory("./src");
 var solutions = GetFiles("./**/*.sln");
 var projects = new []
 {
-    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Delete/{{SolutionName}}.Host.Lambda.Delete.csproj"),
-    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Get/{{SolutionName}}.Host.Lambda.Get.csproj"),
-    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Post/{{SolutionName}}.Host.Lambda.Post.csproj"),
-    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Put/{{SolutionName}}.Host.Lambda.Put.csproj"),
+    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Delete/{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Delete.csproj"),
+    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Get/{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get.csproj"),
+    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.GetAll/{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.GetAll.csproj"),
+    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Post/{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post.csproj"),
+    new FilePath(sourceDir.Path + "/Host/{{SolutionName}}.Host.Lambda.Put/{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put.csproj"),
 };
 
 const string functionName = "GetFunction";

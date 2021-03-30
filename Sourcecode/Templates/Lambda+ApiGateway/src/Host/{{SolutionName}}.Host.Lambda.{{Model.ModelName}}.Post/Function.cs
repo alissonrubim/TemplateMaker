@@ -2,7 +2,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
-using {{SolutionName}}.Host.Lambda.Post.Presentations;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post.Presentations;
 using {{SolutionName}}.UseCases;
 using {{SolutionName}}.UseCases.Interfaces;
 using Lambda.Base;
@@ -11,7 +11,7 @@ using SimpleInjector.Lifestyles;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
-namespace {{SolutionName}}.Host.Lambda.Post
+namespace {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post
 {
     public class Function : FunctionFromBody<RequestModel>
     {

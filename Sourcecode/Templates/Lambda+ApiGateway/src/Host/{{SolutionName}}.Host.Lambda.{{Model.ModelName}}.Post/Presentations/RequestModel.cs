@@ -3,7 +3,7 @@ using {{SolutionName}}.Models;
 using Lambda.Base.Exceptions;
 using Lambda.Base.Presentations;
 
-namespace {{SolutionName}}.Host.Lambda.Post.Presentations
+namespace {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post.Presentations
 {
     public class RequestModel: IRequestModel
     {

@@ -8,12 +8,12 @@ using Coolblue.Utilities.MonitoringEvents.Aws.Lambda.Datadog;
 using System.Net;
 using {{SolutionName}}.Host.Lambda.Tests.Helpers;
 using {{SolutionName}}.UseCases.Interfaces;
-using {{SolutionName}}.Host.Lambda.Get;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get;
 using System.Collections.Generic;
 
 namespace {{SolutionName}}.Host.Lambda.Tests
 {
-    public class GetFunctionTests
+    public class {{Model.ModelName}}GetFunctionTests
     {
         private readonly Mock<IGet{{Model.ModelName}}> _useCase;
         private readonly Function _function;
@@ -22,7 +22,7 @@ namespace {{SolutionName}}.Host.Lambda.Tests
         const string HTTPMETHOD = "GET";
         const string HTTPPATH = "/{Id}";
 
-        public GetFunctionTests()
+        public {{Model.ModelName}}GetFunctionTests()
         {
             _useCase = new Mock<IGet{{Model.ModelName}}>();
 

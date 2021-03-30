@@ -3,7 +3,7 @@ using {{SolutionName}}.Models;
 using Lambda.Base.Exceptions;
 using Lambda.Base.Presentations;
 
-namespace {{SolutionName}}.Host.Lambda.Put.Presentations
+namespace {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put.Presentations
 {
     public class BodyRequestModel: IRequestModel
     {

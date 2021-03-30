@@ -9,14 +9,14 @@ using System.Net;
 using {{SolutionName}}.Host.Lambda.Tests.Helpers;
 using {{SolutionName}}.UseCases.Interfaces;
 using AutoFixture;
-using {{SolutionName}}.Host.Lambda.Put;
-using {{SolutionName}}.Host.Lambda.Put.Presentations;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put.Presentations;
 using {{SolutionName}}.Models;
 using System.Collections.Generic;
 
 namespace {{SolutionName}}.Host.Lambda.Tests
 {
-    public class PutFunctionTests
+    public class {{Model.ModelName}}PutFunctionTests
     {
         private readonly Mock<IUpdate{{Model.ModelName}}> _useCase;
         private readonly Function _function;
@@ -26,7 +26,7 @@ namespace {{SolutionName}}.Host.Lambda.Tests
         const string HTTPMETHOD = "PUT";
         const string HTTPPATH = "/{Id}";
 
-        public PutFunctionTests()
+        public {{Model.ModelName}}PutFunctionTests()
         {
             _useCase = new Mock<IUpdate{{Model.ModelName}}>();
 

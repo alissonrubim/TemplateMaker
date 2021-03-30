@@ -1,7 +1,7 @@
 using Lambda.Base.Exceptions;
 using Lambda.Base.Presentations;
 
-namespace {{SolutionName}}.Host.Lambda.Get.Presentations
+namespace {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get.Presentations
 {
     public class RequestModel: IRequestModel
     {

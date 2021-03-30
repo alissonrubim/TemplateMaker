@@ -7,13 +7,13 @@ using Xunit;
 using SimpleInjector;
 using Coolblue.Utilities.MonitoringEvents.Aws.Lambda.Datadog;
 using System.Net;
-using {{SolutionName}}.Host.Lambda.Delete;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Delete;
 using {{SolutionName}}.Host.Lambda.Tests.Helpers;
 using {{SolutionName}}.UseCases.Interfaces;
 
 namespace {{SolutionName}}.Host.Lambda.Tests
 {
-    public class DeleteFunctionTests
+    public class {{Model.ModelName}}DeleteFunctionTests
     {
         private readonly Mock<IDelete{{Model.ModelName}}> _useCase;
         private readonly Function _function;
@@ -22,7 +22,7 @@ namespace {{SolutionName}}.Host.Lambda.Tests
         const string HTTPMETHOD = "DELETE";
         const string HTTPPATH = "/{Id}";
 
-        public DeleteFunctionTests()
+        public {{Model.ModelName}}DeleteFunctionTests()
         {
             _useCase = new Mock<IDelete{{Model.ModelName}}>();
 

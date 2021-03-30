@@ -21,10 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.Delete\\{{SolutionName}}.Host.Lambda.Delete.csproj" />
-    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.Get\\{{SolutionName}}.Host.Lambda.Get.csproj" />
-    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.Post\\{{SolutionName}}.Host.Lambda.Post.csproj" />
-    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.Put\\{{SolutionName}}.Host.Lambda.Put.csproj" />
+    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Delete\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Delete.csproj" />
+    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get.csproj" />
+    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.GetAll\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.GetAll.csproj" />
+    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post.csproj" />
+    <ProjectReference Include="..\..\src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put.csproj" />
     <ProjectReference Include="..\..\src\Host\Lambda.Base\Lambda.Base.csproj" />
   </ItemGroup>
 

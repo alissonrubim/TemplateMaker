@@ -9,8 +9,8 @@ using System.Net;
 using {{SolutionName}}.Host.Lambda.Tests.Helpers;
 using {{SolutionName}}.UseCases.Interfaces;
 using AutoFixture;
-using {{SolutionName}}.Host.Lambda.Post;
-using {{SolutionName}}.Host.Lambda.Post.Presentations;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post;
+using {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post.Presentations;
 using {{SolutionName}}.Models;
 
 namespace {{SolutionName}}.Host.Lambda.Tests
@@ -24,7 +24,7 @@ namespace {{SolutionName}}.Host.Lambda.Tests
         const string HTTPMETHOD = "POST";
         const string HTTPPATH = "/";
 
-        public PostFunctionTests()
+        public {{Model.ModelName}}PostFunctionTests()
         {
             _useCase = new Mock<ICreate{{Model.ModelName}}>();
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace {{SolutionName}}.Host.Lambda.Get.Presentations
+namespace {{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get.Presentations
 {
     public class ResponseModel
     {

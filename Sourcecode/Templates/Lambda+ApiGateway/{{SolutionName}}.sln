@@ -42,13 +42,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{11D44364-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{FCF41884-C4E8-457F-92F2-4F3ADB23FA2B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.Delete", "src\Host\\{{SolutionName}}.Host.Lambda.Delete\\{{SolutionName}}.Host.Lambda.Delete.csproj", "{9F02B183-A6A9-4AA0-B7B6-E34D69DEA685}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Delete", "src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Delete\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Delete.csproj", "{9F02B183-A6A9-4AA0-B7B6-E34D69DEA685}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.Get", "src\Host\\{{SolutionName}}.Host.Lambda.Get\\{{SolutionName}}.Host.Lambda.Get.csproj", "{D77825FF-EE8D-4909-B311-681DC6A74B1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get", "src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Get.csproj", "{D77825FF-EE8D-4909-B311-681DC6A74B1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.Post", "src\Host\\{{SolutionName}}.Host.Lambda.Post\\{{SolutionName}}.Host.Lambda.Post.csproj", "{384DCC38-A990-40A2-892A-55DA8D8ABE59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post", "src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Post.csproj", "{384DCC38-A990-40A2-892A-55DA8D8ABE59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.Put", "src\Host\\{{SolutionName}}.Host.Lambda.Put\\{{SolutionName}}.Host.Lambda.Put.csproj", "{AA9E1342-B956-4441-ABD3-360131884DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put", "src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.Put.csproj", "{AA9E1342-B956-4441-ABD3-360131884DF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.GetAll", "src\Host\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.GetAll\\{{SolutionName}}.Host.Lambda.{{Model.ModelName}}.GetAll.csproj", "{7D7E5E22-1C80-40A3-9CE8-CAB985B6E00F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,10 @@ Global
 		{AA9E1342-B956-4441-ABD3-360131884DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA9E1342-B956-4441-ABD3-360131884DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA9E1342-B956-4441-ABD3-360131884DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7E5E22-1C80-40A3-9CE8-CAB985B6E00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7E5E22-1C80-40A3-9CE8-CAB985B6E00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7E5E22-1C80-40A3-9CE8-CAB985B6E00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7E5E22-1C80-40A3-9CE8-CAB985B6E00F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +115,7 @@ Global
 		{D77825FF-EE8D-4909-B311-681DC6A74B1B} = {FCF41884-C4E8-457F-92F2-4F3ADB23FA2B}
 		{384DCC38-A990-40A2-892A-55DA8D8ABE59} = {FCF41884-C4E8-457F-92F2-4F3ADB23FA2B}
 		{AA9E1342-B956-4441-ABD3-360131884DF3} = {FCF41884-C4E8-457F-92F2-4F3ADB23FA2B}
+		{7D7E5E22-1C80-40A3-9CE8-CAB985B6E00F} = {FCF41884-C4E8-457F-92F2-4F3ADB23FA2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09A46EEC-815C-4B6C-9617-D29A4509B903}
