@@ -3,9 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using Amazon.KeyManagementService;
 using Amazon.KeyManagementService.Model;
-using InviteToPay.Ports;
+using {{SolutionName}}.Ports;
 
-namespace InviteToPay.SecretManagement.Adapter.Kms
+namespace {{SolutionName}}.SecretManagement.Adapter.Kms
 {
     internal sealed class KmsSecretManagementService : ISecretManagementService
     {

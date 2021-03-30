@@ -1,7 +1,7 @@
 using System;
 using Coolblue.Utilities.MonitoringEvents;
 
-namespace InviteToPay.Oracle.Adapter.Infrastructure
+namespace {{SolutionName}}.Oracle.Adapter.Infrastructure
 {
     internal static class MonitoringEventsExtensions
     {

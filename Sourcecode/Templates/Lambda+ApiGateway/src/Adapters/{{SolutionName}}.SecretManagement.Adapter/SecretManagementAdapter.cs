@@ -1,11 +1,11 @@
 using System;
 using Amazon.KeyManagementService;
-using InviteToPay.Ports;
-using InviteToPay.SecretManagement.Adapter.InMemory;
-using InviteToPay.SecretManagement.Adapter.Kms;
-using InviteToPay.ValueTypes;
+using {{SolutionName}}.Ports;
+using {{SolutionName}}.SecretManagement.Adapter.InMemory;
+using {{SolutionName}}.SecretManagement.Adapter.Kms;
+using {{SolutionName}}.ValueTypes;
 
-namespace InviteToPay.SecretManagement.Adapter
+namespace {{SolutionName}}.SecretManagement.Adapter
 {
     public static class SecretManagementAdapter
     {

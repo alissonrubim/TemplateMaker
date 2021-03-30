@@ -28,9 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Adapters\InviteToPay.Oracle.Adapter\InviteToPay.Oracle.Adapter.csproj" />
-    <ProjectReference Include="..\..\Core\InviteToPay.csproj" />
-    <ProjectReference Include="..\..\Adapters\InviteToPay.SecretManagement.Adapter\InviteToPay.SecretManagement.Adapter.csproj" />
+    <ProjectReference Include="..\..\Adapters\\{{SolutionName}}.Oracle.Adapter\\{{SolutionName}}.Oracle.Adapter.csproj" />
+    <ProjectReference Include="..\..\Core\\{{SolutionName}}.csproj" />
+    <ProjectReference Include="..\..\Adapters\\{{SolutionName}}.SecretManagement.Adapter\\{{SolutionName}}.SecretManagement.Adapter.csproj" />
   </ItemGroup>
 
   <ItemGroup>

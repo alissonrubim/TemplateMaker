@@ -3,42 +3,71 @@
     "Description": "Create a lambda with apigateaway endpoints",
     "SearchDirectory": null,
     "SearchFileExtensions": [".sql", ".txt", ".cake", ".csproj", ".sln", ".cs", ".md", ".yaml"],
-    "Properties": [
+    "Parameters": [
         {
             "Name": "SolutionName",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "SuperNiceProject"
+            "Value": "EcoCheque"
+        },
+        {
+            "Name": "PackageName",
+            "Type": "String",
+            "Required": true,
+            "Value": "API_PKG_ECOCHEQUEGROUP"
         },
         {
             "Name": "ApiOracleUser",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "SRV_SUPER_NICE"
+            "Value": "SRV_ECO_CHEQUE"
         },
         {
             "Name": "GitHubRepositoryName",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "net-super-nice-roject"
+            "Value": "net-eco-cheque"
         },
         {
             "Name": "ProjectDescription",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "It's just a super nice project"
+            "Value": "Api lambda to provide maintenance info about eco cheque."
         },
         {
             "Name": "CostCenter",
             "Type": "String",
             "Required": true,
-            "DefaultValue": "mybrain"
+            "Value": "payment"
         },
         {
-            "Name": "ModelName",
-            "Type": "String",
+            "Name": "Model",
+            "Type": "Object",
             "Required": true,
-            "DefaultValue": "NiceProject"
+            "Value":  [{
+                "Name": "ModelName",
+                "Type": "String",
+                "Required": true,
+                "Value": "EcochequeGroup"
+            },{
+                "Name": "KeyField",
+                "Type": "ColumnInfo",
+                "Required": true,
+                "Value": {
+                    "Name": "EcochequeGroupId",
+                    "Type": "NUMBER"
+                }
+            },{
+                "Name": "Fields",
+                "Type": "ColumnInfo",
+                "IsCollection": true,
+                "Value": [
+                    {
+                        "Name": "EcochequeGroup",
+                        "Type": "VARCHAR"
+                    }
+                ]
+            }]
         }
     ]
 }

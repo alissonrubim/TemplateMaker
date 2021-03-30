@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using InviteToPay.Ports;
+using {{SolutionName}}.Ports;
 
-namespace InviteToPay.SecretManagement.Adapter.InMemory
+namespace {{SolutionName}}.SecretManagement.Adapter.InMemory
 {
     internal sealed class InMemorySecretManagementService : ISecretManagementService
     {

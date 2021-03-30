@@ -106,6 +106,43 @@ namespace Lambda.Base
             }
         }
     }
+    
+    public abstract class FunctionFromPath : BaseFunction
+    {
+        public FunctionFromPath(Container container, bool IsUnitTest = false) : base(container, IsUnitTest)
+        {
+            //Constructor used for tests with custom container
+        }
+        public FunctionFromPath() : base()
+        {
+
+        }
+
+        public virtual async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
+        {
+            try
+            {
+                _monitoringEvents.Logger.Information("Processed message {request}", request);
+                var correlationId = GetCorrelationId();
+                using (_monitoringEvents.LogContext.PushProperty(new LogContextProperty("CorrelationId", correlationId.ToString())))
+                {
+                    return await ProcessMessageAsync();
+                }
+            }
+            catch (InvalidRequestException ex)
+            {
+                _monitoringEvents.Logger.Information("Invalid request {request}", request);
+                return ApiResponse(statusCode: HttpStatusCode.BadRequest, message: ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _monitoringEvents.Logger.Information("An error ocurred for the request {request}", request);
+                return ApiResponse(statusCode: HttpStatusCode.InternalServerError, message: ex.Message);
+            }
+        }
+
+        protected abstract Task<APIGatewayProxyResponse> ProcessMessageAsync();
+    }
 
     public abstract class FunctionFromPath<TFromPath>: BaseFunction where TFromPath : IRequestModel
     {
